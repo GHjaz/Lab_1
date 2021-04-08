@@ -7,23 +7,25 @@
 #include "ExceptionStack.h"
 
 
+/*.. Стэк реализован на массиве ..*/
+
 template <typename T>
 class EStack
 {
 private:
-    T* stackPtr;
-    int size;
-    int top;
+    T* stackPtr;    //.. Указатель на стэк
+    int size;       //.. Размер Стэка
+    int top;        //.. Номер верхушки стэка
 public:
-    EStack(int = 10);
-    EStack(const EStack<T>&);
+    EStack(int = 10); //.. По умолчанию размер стэка 10 элементов
+    EStack(const EStack<T>&); //.. Конструктор копирования
     ~EStack();
 
-    inline void push(const T&);
-    inline T pop();
-    inline int getStackSize() const;
-    inline T* getPtr() const;
-    inline int getTop() const;
+    inline void push(const T&); //.. Закидываем в стэк
+    inline T pop(); //.. Достаем из стэка
+    inline int getStackSize() const;    //.. Возвращаем размер стэка
+    inline T* getPtr() const;   //.. Возвращаем указатель на стэк
+    inline int getTop() const; //.. Возвращаем номер верхнего элемента стэка
 
 };
 
