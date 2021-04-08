@@ -12,7 +12,7 @@ class EStack
 {
 private:
     T* stackPtr;
-    const int size;
+    int size;
     int top;
 public:
     EStack(int = 10);
@@ -26,9 +26,6 @@ public:
     inline int getTop() const;
 
 };
-
-
-
 
 template <typename T>
 EStack<T>::EStack(int maxSize) :
@@ -71,9 +68,8 @@ inline void EStack<T>::push(const T& value)
 template <typename T>
 inline T EStack<T>::pop()
 {
-    const char* Er = "Stack empty";
-    if (top == NULL) { throw exc::StackEmpty("Stack Empty"); }
-    stackPtr[--top];
+    if (!top) { throw exc::StackEmpty("Stack Empty"); }
+    return stackPtr[--top];
 }
 
 

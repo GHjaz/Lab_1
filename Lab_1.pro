@@ -22,3 +22,5 @@ HEADERS += \
     ExceptionStack.h \
     person.h \
     personkeeper.h
+
+DISTFILES +=

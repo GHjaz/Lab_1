@@ -1,8 +1,14 @@
 #include <QCoreApplication>
+#include <iostream>
+#include <fstream>
+#include "personkeeper.h"
+#include <string.h>
 
-int main(int argc, char *argv[])
+using namespace std;
+
+int main()
 {
-    QCoreApplication a(argc, argv);
-
-    return a.exec();
+    PersonKeeper::getInstance()->readPerson();
+    PersonKeeper::getInstance()->writePerson();
+    return 0;
 }
