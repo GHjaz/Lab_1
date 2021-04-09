@@ -25,12 +25,12 @@ public:
     EStack<Person> _users;  //.. Стэк классов персон
     PersonKeeper(PersonKeeper &other) = delete; //.. Удаляем конструктор копирования и присваивания
     void operator=(const PersonKeeper &) = delete;
-    EStack<Person>* readPerson();
+    EStack<Person>* readPerson(std::string);
     //.. Читает из файла, пишет в стэк
     //static PersonKeeper* readPerson(std::ostream& stream);
     //.. writePerson()
     //.. Читает из стека пишет файл
-    void writePerson();
+    void writePerson(std::string);
 };
 
 

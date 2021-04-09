@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include <string>
-#include "ExceptionStack.h"
+#include "Exceptions.h"
 
 
 /*.. Стэк реализован на массиве ..*/

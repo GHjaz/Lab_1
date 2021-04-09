@@ -44,5 +44,18 @@ namespace exc {
         StackEmpty(const StackEmpty& arg) : Exception(arg) {}
     };
 
+    class fileNotOpen : public Exception
+    {
+       public:
+        explicit fileNotOpen(const char* arg) : Exception(arg) {}
+        fileNotOpen(const StackOverFlow& arg) : Exception(arg) {}
+
+    };
+    class fileIsEmpty : public Exception
+    {
+    public:
+     explicit fileIsEmpty(const char* arg) : Exception(arg) {}
+     fileIsEmpty(const StackOverFlow& arg) : Exception(arg) {}
+    };
 
 }

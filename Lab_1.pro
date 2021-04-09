@@ -19,7 +19,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     EStack.h \
-    ExceptionStack.h \
+    Exceptions.h \
     person.h \
     personkeeper.h
 
