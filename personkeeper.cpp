@@ -1,6 +1,6 @@
 #include "personkeeper.h"
 
-PersonKeeper* PersonKeeper::_instance = 0;
+PersonKeeper *PersonKeeper:: _instance;
 
 EStack<Person>* PersonKeeper::readPerson(){
    std::ifstream iFile("..\\Lab_1\\input.txt");

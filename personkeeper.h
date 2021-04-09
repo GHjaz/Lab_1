@@ -10,26 +10,24 @@
 
 class PersonKeeper{
 private:
+    static PersonKeeper* _instance;
     PersonKeeper(){};   //.. Скрываем конструктор и деструктор
     ~PersonKeeper(){};
-    static PersonKeeper *_instance; //.. Создаем статический указатель на Singleton
 
 public:
+
+    static PersonKeeper* getInstance(){ //.. Задаем метод Instance для вызова единственного обекта класса PersonKeeper
+       if (_instance == 0){
+       _instance = new PersonKeeper;
+       }
+        return _instance;
+    };//.. Создаем статический указатель на Singleton
     EStack<Person> _users;  //.. Стэк классов персон
     PersonKeeper(PersonKeeper &other) = delete; //.. Удаляем конструктор копирования и присваивания
     void operator=(const PersonKeeper &) = delete;
-    static PersonKeeper* getInstance(){ //.. Задаем метод Instance для вызова единственного обекта класса PersonKeeper
-        if (_instance == 0) {   //.. Проверяем был ли инцилизирован объект ранее
-        _instance = new PersonKeeper;
-        }
-        return _instance;
-    };
-
     EStack<Person>* readPerson();
     //.. Читает из файла, пишет в стэк
     //static PersonKeeper* readPerson(std::ostream& stream);
-
-
     //.. writePerson()
     //.. Читает из стека пишет файл
     void writePerson();
